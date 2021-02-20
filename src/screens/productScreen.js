@@ -7,12 +7,13 @@ import Product from '../components/product';
 import Detail from '../components/detail';
 import Review from '../components/review';
 
-export default ProductScreen = () => {
+export default ProductScreen = (props) => {
+    const {item}=props.route.params;
     const [productType, setProductType] = useState(0);
 
     const viewItem = () => {
         if (productType === 0) {
-            return <Product />
+            return <Product test={item}/>
         } else if (productType === 1) {
             return <Detail />
         } else if (productType === 2) {
@@ -26,7 +27,7 @@ export default ProductScreen = () => {
 
     return (
         <View style={styles.container}>
-            <View style={{ flex: 1,paddingHorizontal:10 }}>
+            <View style={{ flex: 1 }}>
                 <View style={styles.sliderContainer}>
                     <Slider imageData={productImages} />
                 </View>
@@ -70,7 +71,6 @@ export default ProductScreen = () => {
                 </View>
             </View>
         </View>
-
     );
 }
 const styles = StyleSheet.create({

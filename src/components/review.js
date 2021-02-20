@@ -8,7 +8,7 @@ export default product = () => {
     const renderReviewItem = ({ item }) => {
         return (
             <>
-                <View style={styles.profileContainer}>
+                <View style={styles.profileContainer} >
                     <Image source={item.profile} style={styles.image} />
                     <View style={styles.nameContainer}>
                         <Text style={styles.name}>{item.name}</Text>

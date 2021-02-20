@@ -10,7 +10,7 @@ export default FlashSale = (props) => {
     const renderCategoryItem = ({ item }) => {
         return (
             <View >
-                <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate('ProductScreen')}>
+                <TouchableOpacity activeOpacity={0.8} onPress={() => props.navigation.navigate('ProductScreen', { item: item })}>
                     <Image source={item.image} style={styles.itemImage} key={item.id} />
 
                     <View style={styles.infoContainer}>
@@ -29,7 +29,7 @@ export default FlashSale = (props) => {
                                 <Text style={styles.rating}>{item.rating} </Text>
                             </View>
                         </View>
-                        {item.soldPercentage  ?
+                        {item.soldPercentage ?
                             <View >
                                 <Text style={{ color: '#009DB1' }}>{item.soldPercentage} Available</Text>
                             </View> : <></>

@@ -19,8 +19,12 @@ const BottomTab = createBottomTabNavigator();
 
 const HomeStack = () => {
   return (
-    <Stack.Navigator headerMode>
-      <Stack.Screen name="BottomTab" component={Bottom} />
+    <Stack.Navigator >
+      <Stack.Screen  name="BottomTab" component={Bottom} 
+        options={{
+          headerShown:false
+        }}
+      />
       <Stack.Screen name="ProductScreen" component={ProductScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
       {/* <Stack.Screen name="Profile" component={ProfileScreen} />

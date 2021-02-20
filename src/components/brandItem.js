@@ -10,7 +10,6 @@ export default BrandItem = (props) => {
             <View >
                 <TouchableOpacity key={item.id}  activeOpacity={0.8} onPress={() => props.navigation.navigate('ProductScreen')}>
                     <Image source={item.logo} style={styles.itemImage} backgroundColor={item.color} />
-
                     <View style={styles.infoContainer}>
                         <Text numberOfLines={1} style={styles.infoName}>
                             {item.brand}

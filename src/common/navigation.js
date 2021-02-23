@@ -12,7 +12,6 @@ import BrandScreen from '../screens/brandScreen';
 import ProfileScreen from '../screens/profileScreen';
 import ProductScreen from '../screens/productScreen';
 
-
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();

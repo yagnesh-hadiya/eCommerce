@@ -13,7 +13,7 @@ export const CategoryData = [
       {id: 7, label: 'Sh'},
       {id: 8, label: 'Shirt'},
       {id: 9, label: 'Sweater'},
-      {id: 10, label: 'Jacket'},
+      {id: 10, label: 'Jacket'},         
       {id: 11, label: 'Socks'},
       {id: 12, label: 'Trousers'},
     ],

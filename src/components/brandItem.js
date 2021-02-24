@@ -8,7 +8,7 @@ export default BrandItem = (props) => {
     const renderCategoryItem = ({ item }) => {
         return (
             <View >
-                <TouchableOpacity key={item.id}  activeOpacity={0.8} onPress={() => props.navigation.navigate('ProductScreen')}>
+                <TouchableOpacity key={item.id} activeOpacity={0.8} onPress={() => props.navigation.navigate('BrandItemScreen', { item: item })}>
                     <Image source={item.logo} style={styles.itemImage} backgroundColor={item.color} />
                     <View style={styles.infoContainer}>
                         <Text numberOfLines={1} style={styles.infoName}>
@@ -37,7 +37,7 @@ export default BrandItem = (props) => {
                     renderItem={renderCategoryItem}
                     keyExtractor={(item) => item.id}
                     numColumns={2}
-                    
+
                 />
             </View>
 
@@ -54,14 +54,14 @@ const styles = StyleSheet.create({
     itemContainer: {
         // backgroundColor:'red'
         // marginVertical: 10,  
-        
+
     },
     itemImage: {
         // width: 150,
         marginHorizontal: 10,
         borderRadius: 10,
         marginVertical: 10,
-        tintColor:'#fff',
+        tintColor: '#fff',
         // paddingTop:50,
     },
     infoContainer: {

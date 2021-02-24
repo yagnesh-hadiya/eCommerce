@@ -11,6 +11,7 @@ import CategoryScreen from '../screens/categoryScreen';
 import BrandScreen from '../screens/brandScreen';
 import ProfileScreen from '../screens/profileScreen';
 import ProductScreen from '../screens/productScreen';
+import BrandItemScreen from '../screens/brandItemScreen';
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -19,12 +20,16 @@ const BottomTab = createBottomTabNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator >
-      <Stack.Screen  name="BottomTab" component={Bottom} 
+      <Stack.Screen name="BottomTab" component={Bottom}
         options={{
-          headerShown:false
+          headerShown: false
         }}
       />
       <Stack.Screen name="ProductScreen" component={ProductScreen} />
+      <Stack.Screen name="BrandItemScreen" component={BrandItemScreen}
+        options={{
+          headerShown: false
+        }} />
       <Stack.Screen name="Home" component={HomeScreen} />
       {/* <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="Brand" component={BrandScreen} /> */}
@@ -71,7 +76,7 @@ const navigation = () => {
   return (
     <NavigationContainer >
       <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />} >
-        <Drawer.Screen name="Home" component={HomeStack}  />
+        <Drawer.Screen name="Home" component={HomeStack} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

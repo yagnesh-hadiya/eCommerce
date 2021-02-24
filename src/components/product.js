@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native
 import Icon from 'react-native-vector-icons/Ionicons';
 import { colorData, sizeData } from '../data/data';
 
-export default product = (props) => {
+const Product = (props) => {
     const {test}=props;
     // console.log(test.item)
     const [stateColor, setStateColor] = useState('1');
@@ -179,3 +179,4 @@ const styles = StyleSheet.create({
         textAlignVertical: 'center'
     },
 })
+export default Product;

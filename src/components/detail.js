@@ -4,7 +4,7 @@ import { flashSaleData } from '../data/data';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Title from '../components/title';
 
-export default product = () => {
+const Detail = () => {
     const renderCategoryItem = ({ item }) => {
         return (
             <View >
@@ -121,3 +121,4 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Bold'
     },
 })
+export default Detail;

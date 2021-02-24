@@ -25,7 +25,7 @@ export const productImages = [
   require('../assets/image/productBanner4.png'),
   require('../assets/image/productBanner5.png'),
 ];
-export const colorData = [{id:'1' , color: '#0088FE' }, { id:'2' ,color: '#00C49F' }, {id:'3' , color: '#FFBB28' }, { id:'4' ,color: '#FF8042' }];
+export const colorData = [{id:'1' , color: '#FFBB28' }, { id:'2' ,color: '#00C49F' }, {id:'3' , color: '#0088FE' }, { id:'4' ,color: '#FF8042' }];
 
 export const sizeData = [{id:'1' ,name: 'X' }, { id:'2' ,name: 'M' }, { id:'3' , name: 'XXL' }, { id:'4' , name: 'M' }];
 

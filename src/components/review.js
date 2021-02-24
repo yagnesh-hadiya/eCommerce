@@ -4,7 +4,7 @@ import { ReviewData } from '../data/reviews';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Title from '../components/title';
 
-export default product = () => {
+const Review = () => {
     const renderReviewItem = ({ item }) => {
         return (
             <>
@@ -106,3 +106,4 @@ const styles = StyleSheet.create({
     },
 
 })
+export default Review;

@@ -1,25 +1,16 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, ScrollView, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, StyleSheet, TouchableWithoutFeedback } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Slider from '../components/slider';
 import { productImages } from '../data/data';
 import Product from '../components/product';
-import Detail from '../components/detail';
 import Review from '../components/review';
+import ButtonTab from '../common/buttonTab';
+import Detail from '../components/detail';
+
 
 export default ProductScreen = (props) => {
-    const {item}=props.route.params;
-    const [productType, setProductType] = useState(0);
-
-    const viewItem = () => {
-        if (productType === 0) {
-            return <Product test={item}/>
-        } else if (productType === 1) {
-            return <Detail />
-        } else if (productType === 2) {
-            return <Review />
-        }
-    }
+    const { item } = props.route.params;
 
     const [count, setCount] = useState(0);
     const add = () => { setCount(count + 1) }
@@ -31,25 +22,9 @@ export default ProductScreen = (props) => {
                 <View style={styles.sliderContainer}>
                     <Slider imageData={productImages} />
                 </View>
-                <View style={styles.buttonContainer}>
-                    <TouchableWithoutFeedback activeOpacity={0.8} onPress={() => setProductType(0)}>
-                        <Text style={[styles.buttonText, { backgroundColor: productType === 0 ? '#009DB1' : '#fff', color: productType === 0 ? '#fff' : '#009DB1' }]}>Product</Text>
-                    </TouchableWithoutFeedback>
 
-                    <TouchableWithoutFeedback activeOpacity={0.8} onPress={() => setProductType(1)} >
-                        <Text style={[styles.buttonText, { backgroundColor: productType === 1 ? '#009DB1' : '#fff', color: productType === 1 ? '#fff' : '#009DB1' }]}>Details</Text>
-                    </TouchableWithoutFeedback>
+                <ButtonTab {...props} name1="Product" name2="Details" name3="Review" file1={<Product test={item} />} file2={<Detail />} file3={<Review />} />
 
-                    <TouchableWithoutFeedback activeOpacity={0.8} onPress={() => setProductType(2)} >
-                        <Text style={[styles.buttonText, { backgroundColor: productType === 2 ? '#009DB1' : '#fff', color: productType === 2 ? '#fff' : '#009DB1' }]}>Review</Text>
-                    </TouchableWithoutFeedback>
-                </View>
-
-                <ScrollView showsVerticalScrollIndicator={false}>
-                    <View>
-                        {viewItem()}
-                    </View>
-                </ScrollView>
             </View>
             <View style={styles.footer}>
                 <View style={styles.footerLeft}>
@@ -81,23 +56,8 @@ const styles = StyleSheet.create({
     sliderContainer: {
         backgroundColor: '#fff',
     },
-    buttonContainer: {
-        justifyContent: 'space-around',
-        flexDirection: 'row',
-        alignItems: 'center',
-        marginVertical: 10
-    },
-    buttonText: {
-        borderRadius: 20,
-        borderWidth: 1,
-        borderColor: '#009DB1',
-        paddingVertical: 10,
-        paddingHorizontal: 20,
-        fontSize: 15,
-        fontFamily: 'Roboto-Bold',
-        color: '#fff',
-        // backgroundColor:'#009DB1'
-    },
+
+
     footer: {
         flexDirection: 'row',
         backgroundColor: '#FEFEFE',

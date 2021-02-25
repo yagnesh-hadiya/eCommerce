@@ -4,12 +4,12 @@ import HeaderHome from '../components/headerHome';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
-const ProfileScreen = () => {
+const ProfileScreen = (props) => {
   return (
     <ScrollView>
       <View style={styles.container}>
 
-        <HeaderHome name="Profile" />
+        <HeaderHome name="Profile" {...props}/>
 
         <View style={styles.nameImage}>
           <View>

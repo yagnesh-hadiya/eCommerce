@@ -11,14 +11,16 @@ export default headerHome = (props) => {
                 <Text style={styles.headerText}>{props.name}</Text>
             </View>
             <View style={styles.leftMenu}>
-                <Image style={styles.image} source={require('../assets/icon/trolley.png')} />
+                <TouchableOpacity onPress={() => props.navigation.navigate('CartScreen')}>
+                    <Image style={styles.image} source={require('../assets/icon/trolley.png')} />
+                </TouchableOpacity>
                 <Image style={styles.image1} source={require('../assets/icon/chat.png')} />
             </View>
         </View>
     );
 }
 const styles = StyleSheet.create({
-  
+
     headercontainer: {
         flexDirection: 'row',
         justifyContent: 'space-between',

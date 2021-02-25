@@ -15,7 +15,6 @@ const BrandItemScreen = (props) => {
                         <Icon name="chevron-back-outline" size={30} color='#fff' />
                     </TouchableWithoutFeedback>
                     <Image source={item.item.logo} style={styles.image} />
-
                 </View>
 
                 <ButtonTab  name1="Home" name2="Products" name3="Review" file2={<Detail />} file1={<Detail />} file3={<Review />} />
@@ -32,14 +31,13 @@ const styles = StyleSheet.create({
     imageContainer: {
         backgroundColor: 'rgb(85,220,225)',
         flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent:'flex-start',
+        paddingHorizontal:10
     },
     image: {
         tintColor: '#fff',
-        // alignSelf: 'center',
-
-
+        marginLeft:'23%'
     }
 })
 export default BrandItemScreen;

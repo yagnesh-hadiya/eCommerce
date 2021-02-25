@@ -12,6 +12,8 @@ import BrandScreen from '../screens/brandScreen';
 import ProfileScreen from '../screens/profileScreen';
 import ProductScreen from '../screens/productScreen';
 import BrandItemScreen from '../screens/brandItemScreen';
+import CartScreen from '../screens/cartScreen';
+
 
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
@@ -31,8 +33,8 @@ const HomeStack = () => {
           headerShown: false
         }} />
       <Stack.Screen name="Home" component={HomeScreen} />
-      {/* <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="Brand" component={BrandScreen} /> */}
+      <Stack.Screen name="Profile" component={ProfileScreen} />
+      <Stack.Screen name="CartScreen" component={CartScreen} />
 
     </Stack.Navigator>
   );

@@ -8,7 +8,6 @@ import Review from '../components/review';
 import ButtonTab from '../common/buttonTab';
 import Detail from '../components/detail';
 
-
 export default ProductScreen = (props) => {
     const { item } = props.route.params;
 
@@ -51,13 +50,10 @@ export default ProductScreen = (props) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // marginHorizontal:10
     },
     sliderContainer: {
         backgroundColor: '#fff',
     },
-
-
     footer: {
         flexDirection: 'row',
         backgroundColor: '#FEFEFE',

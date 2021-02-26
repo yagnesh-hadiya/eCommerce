@@ -52,16 +52,16 @@ const CartScreen = () => {
             ></FlatList>
             <View style={styles.footer}>
                 <View style={styles.subTotal}>
-                    <Text>SubTotal</Text>
-                    <Text>$50.23</Text>
+                    <Text style={styles.subTotalText}>SubTotal</Text>
+                    <Text style={styles.subTotalText}>$50.23</Text>
                 </View>
                 <View style={styles.subTotal}>
-                    <Text>TAX (20%)</Text>
-                    <Text>$16.13</Text>
+                    <Text style={styles.subTotalText}>TAX (20%)</Text>
+                    <Text style={styles.subTotalText}>$16.13</Text>
                 </View>
-                <View style={styles.subTotal}>
-                    <Text>checkout</Text>
-                    <Text>$55.96</Text>
+                <View style={[styles.subTotal,styles.checkOut]}>
+                    <Text style={[styles.subTotalText,{color:'#fff'}]}>checkout</Text>
+                    <Text style={[styles.subTotalText,{color:'#fff'}]}>$55.96</Text>
                 </View>
             </View>
         </View>
@@ -113,7 +113,21 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'space-between',
-        paddingVertical:5,
+        paddingVertical: 5,
+    },
+    subTotalText: {
+        color: '#1E979A',
+        fontSize: 15,
+        fontFamily: 'Roboto-Bold',
+    },
+    checkOut:{
+        backgroundColor:'#1E979A',
+        borderRadius:20,
+        justifyContent:'space-around',
+        marginHorizontal:40,
+        alignItems:'center',
+        paddingVertical:8,
+        marginBottom:10
     }
 })
 export default CartScreen;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, ScrollView, TouchableWithoutFeedback } from 'react-native';
 import HeaderHome from '../components/headerHome';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -9,7 +9,7 @@ const ProfileScreen = (props) => {
     <ScrollView>
       <View style={styles.container}>
 
-        <HeaderHome name="Profile" {...props}/>
+        <HeaderHome name="Profile" {...props} />
 
         <View style={styles.nameImage}>
           <View>
@@ -20,10 +20,12 @@ const ProfileScreen = (props) => {
         </View>
 
         <View style={styles.tabWrapper}>
-          <View style={styles.Favourite}>
-            <Icon name="heart-outline" size={30} color='#5A5A5A' />
-            <Text style={styles.favouriteText}>Favourite</Text>
-          </View>
+          <TouchableWithoutFeedback onPress={() => props.navigation.navigate('FavouriteScreen')}>
+            <View style={styles.Favourite}>
+              <Icon name="heart-outline" size={30} color='#5A5A5A' />
+              <Text style={styles.favouriteText}>Favourite</Text>
+            </View>
+          </TouchableWithoutFeedback>
           <View style={styles.Favourite}>
             <Icon name="body-outline" size={30} color='#5A5A5A' />
             <Text style={styles.favouriteText}>Shop Owner</Text>
@@ -33,7 +35,9 @@ const ProfileScreen = (props) => {
         <View style={[styles.tabWrapper, styles.orderWrapper]}>
           <Icon name="cash-outline" size={30} color='#8F8F8F' />
           <Text style={[styles.favouriteText, styles.textBold]}>My Orders</Text>
-          <Text style={styles.favouriteText}>View All</Text>
+          <TouchableWithoutFeedback onPress={() => props.navigation.navigate('CartScreen')}>
+            <Text style={styles.favouriteText}>View All</Text>
+          </TouchableWithoutFeedback>
         </View>
 
         <View style={styles.profileSetting}>
@@ -78,7 +82,7 @@ const ProfileScreen = (props) => {
           </View>
 
           <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
-            <View style={{ flexDirection: 'row'}}>
+            <View style={{ flexDirection: 'row' }}>
               <Icon name="language-outline" size={25} color='#859BA9' />
               <Text style={[styles.favouriteText, styles.marginLeft]}>Languages</Text>
             </View>

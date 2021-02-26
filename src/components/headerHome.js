@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 
 export default headerHome = (props) => {
     return (
@@ -11,9 +11,9 @@ export default headerHome = (props) => {
                 <Text style={styles.headerText}>{props.name}</Text>
             </View>
             <View style={styles.leftMenu}>
-                <TouchableOpacity onPress={() => props.navigation.navigate('CartScreen')}>
+                <TouchableWithoutFeedback onPress={() => props.navigation.navigate('CartScreen')}>
                     <Image style={styles.image} source={require('../assets/icon/trolley.png')} />
-                </TouchableOpacity>
+                </TouchableWithoutFeedback>
                 <Image style={styles.image1} source={require('../assets/icon/chat.png')} />
             </View>
         </View>

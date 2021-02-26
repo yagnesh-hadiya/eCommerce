@@ -1,12 +1,9 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
-import { flashSaleData, trendingSaleData } from '../data/data';
+import { flashSaleData } from '../data/data';
 import Icon from 'react-native-vector-icons/Ionicons';
-import Title from '../components/title';
 
-
-export default FlashSale = (props) => {
-    // console.log(props)
+const FavouriteScreen = (props) => {
     const renderCategoryItem = ({ item }) => {
         return (
             <View >
@@ -39,36 +36,15 @@ export default FlashSale = (props) => {
             </View >
         )
     }
-
     return (
         <View style={styles.container}>
-            <Title image={require('../assets/icon/bullhorn.png')} titleName={'Flash Sales'} />
-            <View style={styles.itemContainer}>
-                <FlatList
-                    data={flashSaleData}
-                    renderItem={renderCategoryItem}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
-            </View>
-            <Title image={require('../assets/icon/thunder.png')} titleName={'Trending Now'} />
-            <View style={styles.itemContainer}>
-                <FlatList
-                    data={trendingSaleData}
-                    renderItem={renderCategoryItem}
-                    keyExtractor={(item) => item.id}
-                    horizontal={true}
-                    showsHorizontalScrollIndicator={false}
-                />
-            </View>
-            <Title image={require('../assets/icon/recomanded.png')} titleName={'Recommandation'} />
             <View style={styles.itemContainer}>
                 <FlatList
                     data={flashSaleData}
                     renderItem={renderCategoryItem}
                     keyExtractor={(item) => item.id}
                     numColumns={2}
+                    showsVerticalScrollIndicator={false}
                 />
             </View>
         </View>
@@ -79,11 +55,6 @@ const styles = StyleSheet.create({
     container: {
         backgroundColor: '#fAFAFA',
         marginHorizontal: 10,
-
-    },
-    itemContainer: {
-        // backgroundColor:'red'
-        // marginVertical: 10,
     },
     itemImage: {
         width: 150,
@@ -125,3 +96,4 @@ const styles = StyleSheet.create({
     },
 
 })
+export default FavouriteScreen;

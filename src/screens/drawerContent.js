@@ -19,21 +19,21 @@ const drawerContent = (props) => {
             textStyle={styles.title} />
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('Profile')}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('NotificationScreen')}>
           <Title
             iconName={'notifications-outline'}
             titleName={'Notification'}
             textStyle={styles.title} />
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('Brand')}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('CartScreen')}>
           <Title
             iconName={'documents-outline'}
             titleName={'My Orders'}
             textStyle={styles.title} />
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('Profile')}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('FavouriteScreen')}>
           <Title
             iconName={'star-outline'}
             titleName={'wish List'}

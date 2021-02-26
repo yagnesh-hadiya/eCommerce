@@ -13,6 +13,8 @@ import ProfileScreen from '../screens/profileScreen';
 import ProductScreen from '../screens/productScreen';
 import BrandItemScreen from '../screens/brandItemScreen';
 import CartScreen from '../screens/cartScreen';
+import FavouriteScreen from '../screens/favouriteScreen';
+import NotificationScreen from '../screens/notificationScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -35,6 +37,8 @@ const HomeStack = () => {
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
       <Stack.Screen name="CartScreen" component={CartScreen} />
+      <Stack.Screen name="FavouriteScreen" component={FavouriteScreen} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
 
     </Stack.Navigator>
   );

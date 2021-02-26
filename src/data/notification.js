@@ -8,14 +8,14 @@ export const NotificationData = [
   },
   {
     id: '1',
-    image: require('../assets/image/product2.jpg'),
+    image: require('../assets/image/product3.jpg'),
     message: 'your order declined you can try again...',
     date: '2020-09-04',
     time: '09:04',
   },
   {
     id: '2',
-    image: require('../assets/image/product2.jpg'),
+    image: require('../assets/image/product4.jpg'),
     message: 'GoodMorning',
     date: '2020-09-04',
     time: '09:04',

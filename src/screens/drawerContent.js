@@ -26,7 +26,7 @@ const drawerContent = (props) => {
             textStyle={styles.title} />
         </TouchableOpacity>
 
-        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('CartScreen')}>
+        <TouchableOpacity activeOpacity={0.7} onPress={() => props.navigation.navigate('OrderScreen')}>
           <Title
             iconName={'documents-outline'}
             titleName={'My Orders'}

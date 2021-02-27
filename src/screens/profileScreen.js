@@ -35,7 +35,7 @@ const ProfileScreen = (props) => {
         <View style={[styles.tabWrapper, styles.orderWrapper]}>
           <Icon name="cash-outline" size={30} color='#8F8F8F' />
           <Text style={[styles.favouriteText, styles.textBold]}>My Orders</Text>
-          <TouchableWithoutFeedback onPress={() => props.navigation.navigate('CartScreen')}>
+          <TouchableWithoutFeedback onPress={() => props.navigation.navigate('OrderScreen')}>
             <Text style={styles.favouriteText}>View All</Text>
           </TouchableWithoutFeedback>
         </View>

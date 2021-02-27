@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, Image, FlatList, TouchableWithoutFeedback } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList, TouchableWithoutFeedback, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import CartData from '../data/Cart';
 
-const CartScreen = () => {
+const CartScreen = (props) => {
 
     const [count, setCount] = useState(0);
     const add = () => { setCount(count + 1) }
@@ -59,10 +59,12 @@ const CartScreen = () => {
                     <Text style={styles.subTotalText}>TAX (20%)</Text>
                     <Text style={styles.subTotalText}>$16.13</Text>
                 </View>
-                <View style={[styles.subTotal,styles.checkOut]}>
-                    <Text style={[styles.subTotalText,{color:'#fff'}]}>checkout</Text>
-                    <Text style={[styles.subTotalText,{color:'#fff'}]}>$55.96</Text>
-                </View>
+                <TouchableOpacity onPress={() => props.navigation.navigate('CheckOutScreen')}>
+                    <View style={[styles.subTotal, styles.checkOut]}>
+                        <Text style={[styles.subTotalText, { color: '#fff' }]}>checkout</Text>
+                        <Text style={[styles.subTotalText, { color: '#fff' }]}>$55.96</Text>
+                    </View>
+                </TouchableOpacity>
             </View>
         </View>
     );
@@ -120,14 +122,14 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontFamily: 'Roboto-Bold',
     },
-    checkOut:{
-        backgroundColor:'#1E979A',
-        borderRadius:20,
-        justifyContent:'space-around',
-        marginHorizontal:40,
-        alignItems:'center',
-        paddingVertical:8,
-        marginBottom:10
+    checkOut: {
+        backgroundColor: '#1E979A',
+        borderRadius: 20,
+        justifyContent: 'space-around',
+        marginHorizontal: 40,
+        alignItems: 'center',
+        paddingVertical: 8,
+        marginBottom: 10
     }
 })
 export default CartScreen;

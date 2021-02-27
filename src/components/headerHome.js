@@ -14,7 +14,9 @@ export default headerHome = (props) => {
                 <TouchableWithoutFeedback onPress={() => props.navigation.navigate('CartScreen')}>
                     <Image style={styles.image} source={require('../assets/icon/trolley.png')} />
                 </TouchableWithoutFeedback>
-                <Image style={styles.image1} source={require('../assets/icon/chat.png')} />
+                <TouchableWithoutFeedback onPress={() => props.navigation.navigate('ChatScreen')}>
+                    <Image style={styles.image1} source={require('../assets/icon/chat.png')} />
+                </TouchableWithoutFeedback>
             </View>
         </View>
     );

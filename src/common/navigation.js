@@ -15,6 +15,10 @@ import BrandItemScreen from '../screens/brandItemScreen';
 import CartScreen from '../screens/cartScreen';
 import FavouriteScreen from '../screens/favouriteScreen';
 import NotificationScreen from '../screens/notificationScreen';
+import OrderScreen from '../screens/orderScreen';
+import TrackingOrderScreen from '../screens/trackingOrderScreen';
+import CheckOutScreen from '../screens/checkOutScreen';
+import ChatScreen from '../screens/chatScreen';
 
 
 const Drawer = createDrawerNavigator();
@@ -24,22 +28,18 @@ const BottomTab = createBottomTabNavigator();
 const HomeStack = () => {
   return (
     <Stack.Navigator >
-      <Stack.Screen name="BottomTab" component={Bottom}
-        options={{
-          headerShown: false
-        }}
-      />
+      <Stack.Screen name="BottomTab" component={Bottom} options={{ headerShown: false }} />
       <Stack.Screen name="ProductScreen" component={ProductScreen} />
-      <Stack.Screen name="BrandItemScreen" component={BrandItemScreen}
-        options={{
-          headerShown: false
-        }} />
+      <Stack.Screen name="BrandItemScreen" component={BrandItemScreen} options={{ headerShown: false }} />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Profile" component={ProfileScreen} />
-      <Stack.Screen name="CartScreen" component={CartScreen} />
-      <Stack.Screen name="FavouriteScreen" component={FavouriteScreen} />
-      <Stack.Screen name="NotificationScreen" component={NotificationScreen} />
-
+      <Stack.Screen name="CartScreen" component={CartScreen} options={{ headerTitle: 'Cart' }} />
+      <Stack.Screen name="FavouriteScreen" component={FavouriteScreen} options={{ headerTitle: 'Favourite Item' }} />
+      <Stack.Screen name="NotificationScreen" component={NotificationScreen} options={{ headerTitle: 'Notification' }} />
+      <Stack.Screen name="OrderScreen" component={OrderScreen} options={{ headerTitle: 'Order Item' }} />
+      <Stack.Screen name="TrackingOrderScreen" component={TrackingOrderScreen} options={{ headerTitle: 'Tracking Order' }} />
+      <Stack.Screen name="CheckOutScreen" component={CheckOutScreen} options={{ headerTitle: 'CheckOut' }} />
+      <Stack.Screen name="ChatScreen" component={ChatScreen} options={{ headerTitle: 'Chat' }} />
     </Stack.Navigator>
   );
 }

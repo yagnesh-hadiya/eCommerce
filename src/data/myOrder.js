@@ -1,3 +1,40 @@
+export const trackingOrder = [
+  {
+    id: '1',
+    name: 'Order Received',
+    active: '#009DB1',
+    inActive: 'gray',
+    status: 'true'
+  },
+  {
+    id: '2',
+    name: 'Preparing',
+    active: '#009DB1',
+    inActive: 'gray',
+    status: 'false'
+  },
+  {
+    id: '3',
+    name: 'Ready',
+    active: '#009DB1',
+    inActive: 'gray',
+    status: 'false'
+  },
+  {
+    id: '4',
+    name: 'On the way',
+    active: '#009DB1',
+    inActive: 'gray',
+    status: 'false'
+  },
+  {
+    id: '5',
+    name: 'Delivered',
+    active: '#009DB1',
+    inActive: 'gray',
+    status: 'false'
+  }
+];
 export const myOrderData = [
   {
     name: 'Womens T-Shirt',

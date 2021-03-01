@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, TouchableWithoutFeedback, ScrollView } from 'react-native';
 
-
 const ButtonTab = ({file1, file2, file3, name1, name2, name3}) => {
-
     const [productType, setProductType] = useState(0);
 
     const viewItem = () => {
@@ -55,6 +53,5 @@ const styles = StyleSheet.create({
         fontFamily: 'Roboto-Bold',
         color: '#fff',
     },
-
 })
 export default ButtonTab;

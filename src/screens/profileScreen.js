@@ -3,7 +3,6 @@ import { View, Text, StyleSheet, Image, ScrollView, TouchableWithoutFeedback } f
 import HeaderHome from '../components/headerHome';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-
 const ProfileScreen = (props) => {
   return (
     <ScrollView>
@@ -47,22 +46,22 @@ const ProfileScreen = (props) => {
             <Text style={styles.favouriteText}>Edit</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.info}>
             <Text style={styles.favouriteText}>Full Name</Text>
             <Text style={[styles.favouriteText, styles.email]}>Andrew R. Whitesides</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.info}>
             <Text style={styles.favouriteText}>Email</Text>
             <Text style={[styles.favouriteText, styles.email]}>andrew@gmail.com</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.info}>
             <Text style={styles.favouriteText}>Gender</Text>
             <Text style={[styles.favouriteText, styles.email]}>Male</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.info}>
             <Text style={styles.favouriteText}>Birth Date</Text>
             <Text style={[styles.favouriteText, styles.email]}>1990-05-12</Text>
           </View>
@@ -75,13 +74,12 @@ const ProfileScreen = (props) => {
             <Text style={styles.favouriteText}>Edit</Text>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.shipping}>
             <Icon name="map-outline" size={25} color='#859BA9' />
             <Text style={[styles.favouriteText, styles.marginLeft]}>Shipping Address</Text>
-            {/* <Text style={[styles.favouriteText, styles.email]}>Andrew R. Whitesides</Text> */}
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'space-between', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.languageWrapper}>
             <View style={{ flexDirection: 'row' }}>
               <Icon name="language-outline" size={25} color='#859BA9' />
               <Text style={[styles.favouriteText, styles.marginLeft]}>Languages</Text>
@@ -91,10 +89,9 @@ const ProfileScreen = (props) => {
             </View>
           </View>
 
-          <View style={{ flexDirection: 'row', justifyContent: 'flex-start', paddingHorizontal: 20, marginTop: 22 }}>
+          <View style={styles.shipping}>
             <Icon name="help-circle-outline" size={25} color='#859BA9' />
             <Text style={[styles.favouriteText, styles.marginLeft]}>Help & Supports</Text>
-            {/* <Text style={[styles.favouriteText, styles.email]}>Male</Text> */}
           </View>
 
         </View>
@@ -189,5 +186,23 @@ const styles = StyleSheet.create({
   },
   marginLeft: {
     marginLeft: 20
+  },
+  info: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    marginTop: 22
+  },
+  shipping: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    paddingHorizontal: 20,
+    marginTop: 22
+  },
+  languageWrapper: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 20,
+    marginTop: 22
   }
 })

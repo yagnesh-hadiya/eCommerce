@@ -1,8 +1,23 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet, Image, FlatList } from 'react-native';
+import { trackingOrder } from '../data/myOrder';
+import StarRating from '../components/starRating';
 
 const TrackingOrderScreen = (props) => {
     const { item } = props.route.params;
+    const renderItem = ({ item }) => {
+        return (
+            <>
+                <View style={styles.orderTracking}>
+                    <Text style={[{ backgroundColor: item.status === 'true' ? item.active : item.inActive }, styles.circle]}></Text>
+                    <Text style={styles.itemName}>{item.name}</Text>
+                </View>
+                {item.id === '5' ? <></> :
+                    <View style={[{ borderColor: item.status === 'true' ? item.active : item.inActive }, styles.lineWidth]}></View>
+                }
+            </>
+        )
+    }
     return (
         <View style={styles.container}>
             <Text style={[styles.shoppingTextTitle, styles.orderid]}>Order Id : {item.orderid}</Text>
@@ -21,13 +36,27 @@ const TrackingOrderScreen = (props) => {
                     <Text style={styles.shoppingTextTitle}>{item.time}</Text>
                 </View>
             </View>
+            <View style={styles.trackingContainer}>
+                <FlatList
+                    data={trackingOrder}
+                    renderItem={renderItem}
+                    keyExtractor={item => item.id.toString()}
+                    numColumns={1}
+                    showsVerticalScrollIndicator={false}
+                ></FlatList>
+            </View>
+            <View style={styles.ratingWrapper}>
+                <Text style={styles.ratingTitle}>How would you rate this store?</Text>
+                <Text style={styles.ratingText}>Click on the stars below to leave comments</Text>
+                <StarRating />
+            </View>
         </View>
     );
 }
 const styles = StyleSheet.create({
     container: {
-        paddingHorizontal: 10,
         marginTop: 10,
+        flex: 1,
     },
     itemImage: {
         width: '100%',
@@ -45,6 +74,7 @@ const styles = StyleSheet.create({
     },
     orderid: {
         fontFamily: 'Roboto-Bold',
+        marginHorizontal: 10
     },
     rightInfo: {
         width: '20%',
@@ -63,12 +93,53 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         backgroundColor: '#fff',
-        marginBottom: 15,
         padding: 5,
+        marginHorizontal: 10
     },
     itemDetail: {
         width: '60%',
         paddingHorizontal: 10,
     },
+    orderTracking: {
+        marginVertical: 5,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'flex-start'
+    },
+    trackingContainer: {
+        marginVertical: 30,
+        flex: 1,
+    },
+    ratingWrapper: {
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        padding: 10,
+    },
+    circle: {
+        padding: 5,
+        borderRadius: 20,
+        width: 25,
+        height: 25,
+        marginHorizontal: 9
+    },
+    itemName: {
+        fontFamily: 'Roboto-Bold',
+        color: '#1E979A',
+        marginLeft: 15
+    },
+    lineWidth: {
+        borderWidth: 1,
+        width: 1,
+        height: 50,
+        marginLeft: 20
+    },
+    ratingTitle: {
+        color: '#1E979A',
+        fontFamily: 'Roboto-Bold'
+    },
+    ratingText: {
+        color: '#1E979A',
+        fontFamily: 'Roboto-Regular'
+    }
 })
 export default TrackingOrderScreen;

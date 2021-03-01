@@ -20,7 +20,6 @@ import TrackingOrderScreen from '../screens/trackingOrderScreen';
 import CheckOutScreen from '../screens/checkOutScreen';
 import ChatScreen from '../screens/chatScreen';
 
-
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const BottomTab = createBottomTabNavigator();
